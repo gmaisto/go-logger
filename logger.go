@@ -478,4 +478,4 @@ func (info *Info) logLevelString() string {
 	return logLevels[info.Level-1]
 }
 
-var std = New("Logger", 0, os.Stdout)
+var std, _ = New("Logger", 0, os.Stdout)
