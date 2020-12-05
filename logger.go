@@ -203,6 +203,14 @@ func (l *Logger) SetLogLevel(level LogLevel) {
 	l.worker.level = level
 }
 
+func (w *Worker) SetOutput(wr io.Writer) {
+	w.Minion.SetOutput(wr)
+}
+
+func (l *Logger) SetOutput(wr io.Writer) {
+	l.SetOutput(wr)
+}
+
 // Function of Worker class to log a string based on level
 func (w *Worker) Log(level LogLevel, calldepth int, info *Info) error {
 
