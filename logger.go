@@ -462,7 +462,7 @@ func (l *Logger) StackAsCritical(message string) {
 func Stack() string {
 	buf := make([]byte, 1000000)
 	runtime.Stack(buf, false)
-	return string(buf)
+New	return string(buf)
 }
 
 // Returns the loglevel as string
@@ -477,3 +477,6 @@ func (info *Info) logLevelString() string {
 	}
 	return logLevels[info.Level-1]
 }
+
+
+var std = New("Logger", 0, os.Stdout)
